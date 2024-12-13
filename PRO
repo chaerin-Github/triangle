@@ -1,0 +1,50 @@
+#include<stdio.h>
+#include<stdbool.h>
+
+int even_triangle(int n){
+    int floor = n/2;
+    
+    puts("Even triangle is started.");
+    for (int i = 0; i < floor; i++){
+        for (int j=0; j<(n/2)-i; j++){
+            printf(" ");
+        }
+        for (int k = 0; k<=(i*2)+1;k++){
+            printf("*");
+        }
+        printf("\n");
+    }
+}
+
+int odd_triangle(int n){
+    int floor = n/2 + 1;
+    puts("Odd triangle is started.");
+    for (int i = 0; i < floor; i++){
+        for (int j=0; j<(n/2)-i; j++){
+            printf(" ");
+    
+        }
+        for (int k = 0; k<(i*2)+1;k++){
+            printf("*");
+        }
+        printf("\n");
+    }
+}
+
+int make_triangle(int n){
+    if ((n%2)==0){
+        even_triangle(n);
+    }
+    else if (n%2 == 1){
+        odd_triangle(n);
+    }
+}
+
+int main(){
+    int n;
+
+    printf("Enter the n value: ");
+    scanf("%d", &n);
+
+    make_triangle(n);
+}
